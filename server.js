@@ -2,7 +2,6 @@ require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
 const app = express();
-const path = require("path");
 const authRoute = require("./router/auth-router");
 const foodRoute = require("./router/food-router");
 const adminRoute = require("./router/admin-router");
@@ -33,11 +32,6 @@ app.use("/api/admin", adminRoute);
 // });
 
 app.use(errorMiddleware);
-
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
 
 const PORT = 5000;
 connectDb().then(() => {

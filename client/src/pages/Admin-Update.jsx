@@ -17,15 +17,12 @@ export const AdminUpdate = () => {
 
   const getSingleUserData = async () => {
     try {
-      const response = await fetch(
-        `${window.location.origin}/${params.id}`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: authorizationToken,
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:5000/${params.id}`, {
+        method: "GET",
+        headers: {
+          Authorization: authorizationToken,
+        },
+      });
       const data = await response.json();
       console.log(`single user data: ${data}`);
       setData(data);
@@ -46,7 +43,7 @@ export const AdminUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${window.location.origin}/${params.id}`, {
+      const response = await fetch(`http://localhost:5000/${params.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

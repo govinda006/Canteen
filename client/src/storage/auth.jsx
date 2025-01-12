@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
       if (!token) {
         throw new Error("No token available");
       }
-      const response = await fetch(`${window.location.origin}/api/auth/user`, {
+      const response = await fetch("http://localhost:5000/api/auth/user", {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   // Function to fetch all food items
   const getFoods = async () => {
     try {
-      const response = await fetch(`${window.location.origin}/api/food/Home`, {
+      const response = await fetch("http://localhost:5000/api/food/Home", {
         method: "GET",
       });
 

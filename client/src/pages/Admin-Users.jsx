@@ -9,7 +9,7 @@ export const AdminUsers = () => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `${window.location.origin}/api/admin/users/delete/${id}`,
+        `http://localhost:5000/api/admin/users/delete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -31,7 +31,7 @@ export const AdminUsers = () => {
   const getAllUsersData = async () => {
     try {
       const response = await fetch(
-        `${window.location.origin}/api/admin/users`,
+        `http://localhost:5000/api/admin/users`,
         {
           method: "GET",
           headers: {
