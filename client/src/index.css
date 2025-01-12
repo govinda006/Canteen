@@ -1,0 +1,429 @@
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Quicksand:wght@300..700&display=swap');
+
+/* Styling for elements with the class 'quicksand-unique' */
+.quicksand-unique {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Base CSS */
+
+/* Formal styling for the hero section */
+.hero-section {
+  background-color: #054e5a;
+  padding: 50px 0;
+  text-align: center;
+  color: #ecf0f1;
+}
+
+/* Formal styling for the main heading */
+.main-heading {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Formal styling for the description text */
+.description {
+  font-size: 1.75rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Formal styling for the categories section */
+.categories-section {
+  padding: 60px 0;
+  background-color: #ecf0f1;
+}
+
+/* Formal styling for section headings */
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Formal styling for grid layout */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* Formal styling for a grid with four columns */
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Formal styling for card elements */
+.card {
+  background: #054e5a;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Formal styling for card hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Formal styling for card images */
+.card-img {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Formal styling for card details */
+.card-details {
+  padding: 30px;
+  background-color: #ecf0f1;
+}
+
+/* Formal styling for a grid with two columns */
+.grid-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Formal styling for buttons */
+button {
+  background-color: #054e5a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Formal styling for button hover effect */
+button:hover {
+  background-color: #3498db;
+}
+
+/* Styling for the register section */
+.section-register {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+/* Styling for the register image */
+.register-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for the text below the register image */
+.image-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Styling for the login form */
+.login-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Styling for form inputs */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling for submit button */
+.btn-submit {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Styling for submit button hover effect */
+.btn-submit:hover {
+  background-color: #555;
+}
+
+/* Styling for the admin login section */
+.admin-login-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+/* Styling for the login image */
+.login-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for the text below the login image */
+.image-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Styling for the login form */
+.login-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Styling for form inputs */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling for submit button */
+.btn-submit {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Styling for submit button hover effect */
+.btn-submit:hover {
+  background-color: #555;
+}
+
+/* Styling for the admin users section */
+.admin-users-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.admin-users {
+  margin-top: 20px;
+}
+
+.admin-users table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-users th,
+.admin-users td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.admin-users th {
+  background-color: #054e5a;
+  color: white;
+}
+
+.admin-users td {
+  background-color: #fff;
+}
+
+.admin-users button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.admin-users button:hover {
+  background-color: #c0392b;
+}
+
+.admin-users a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.admin-users a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the contact section */
+.section-contact {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.contact-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-form form div {
+  margin-bottom: 15px;
+}
+
+.section-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.section-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.section-form button {
+  background-color: #054e5a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.section-form button:hover {
+  background-color: #3498db;
+}
+
+/* Styling for the header */
+header {
+  background-color: #054e5a;
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header nav ul li a:hover {
+  color: #3498db;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1200px) {
+  .grid-four-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-four-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-four-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .main-heading {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 30px 0;
+  }
+
+  .categories-section {
+    padding: 40px 0;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card-img {
+    padding: 20px;
+  }
+
+  .card-details {
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+}
