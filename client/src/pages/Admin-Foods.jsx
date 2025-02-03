@@ -1,58 +1,102 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useAuth } from "../storage/auth"; // Import useAuth hook
 
 export const AdminFoods = () => {
-  const [foods, setFoods] = useState([]); // State to store food items
+  const { authorizationToken } = useAuth(); // Use useAuth to get authorizationToken
+  const [foods, setFoods] = useState([]); // State for foods data
   const [loading, setLoading] = useState(true); // State for loading status
   const [error, setError] = useState(null); // State to store errors
 
-  // Fetch food items from the backend when the component mounts
-  useEffect(() => {
-    const fetchFoods = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/api/admin/food"); // Fetch from the backend
-        if (response.ok) {
-          const data = await response.json(); // Parse the JSON response
-          setFoods(data); // Set the food items to state
-        } else {
-          setError("Failed to fetch food items");
+  const deleteFood = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/admin/food/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationToken,
+          },
         }
-      } catch (err) {
-        setError("An error occurred: " + err.message);
-      } finally {
-        setLoading(false); // Set loading to false after request completion
-      }
-    };
+      );
+      const data = await response.json();
+      console.log(`foods after delete ${data}`);
 
-    fetchFoods();
-  }, []); // Empty dependency array ensures this runs only once
+      if (response.ok) {
+        getAllFoodsData().finally(() => setLoading(false));
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const getAllFoodsData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/admin/foods",
+        {
+          method: "GET",
+          headers: {
+            Authorization: authorizationToken,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(`foods ${data}`);
+      setFoods([...data]); // Use spread operator to set foods
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllFoodsData();
+  }, []);
 
   // Show loading state or error message if data is not yet available
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error}</h1>;
 
   return (
-    <div>
-      <h1>Admin Foods Data</h1>
-      {foods.length === 0 ? (
-        <p>No food items available.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Food Name</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {foods.map((food) => (
-              <tr key={food._id}>
-                <td>{food.name}</td>
-                <td>{food.description}</td>
+    <section className="admin-foods-section">
+      <div className="container">
+        <h1>Admin Foods Data</h1>
+      </div>
+      <div className="container admin-foods">
+        {foods.length === 0 ? (
+          <p>No food items available.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Food Name</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
+            </thead>
+            <tbody>
+              {foods.map((food) => (
+                <tr key={food._id}>
+                  <td>{food.name}</td>
+                  <td>{food.description}</td>
+                  <td>
+                    <Link to={`/admin/foods/update/${food._id}`}>
+                      Edit
+                    </Link>
+                  </td>
+                  <td>
+                    <button onClick={() => deleteFood(food._id)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </section>
   );
 };

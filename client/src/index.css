@@ -292,6 +292,37 @@ button:hover {
   text-decoration: underline;
 }
 
+/* Styling for the admin foods section */
+.admin-foods-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.admin-foods {
+  margin-top: 20px;
+}
+
+.admin-foods table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-foods th,
+.admin-foods td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.admin-foods th {
+  background-color: #054e5a;
+  color: white;
+}
+
+.admin-foods td {
+  background-color: #fff;
+}
+
 /* Styling for the contact section */
 .section-contact {
   padding: 50px 0;
