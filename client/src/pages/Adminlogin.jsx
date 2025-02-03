@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../storage/auth";
 
-const LOGIN_URL = `http://localhost:5000/api/auth/login`;
+const LOGIN_URL = "http://localhost:3000/api/auth/login";
 
 export const AdminLogin = () => {
   const [user, setUser] = useState({

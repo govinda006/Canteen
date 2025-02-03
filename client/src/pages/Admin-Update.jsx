@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../storage/auth";
 
+
 export const AdminUpdate = () => {
   const [data, setData] = useState({
     username: "",
@@ -17,12 +18,15 @@ export const AdminUpdate = () => {
 
   const getSingleUserData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/${params.id}`, {
-        method: "GET",
-        headers: {
-          Authorization: authorizationToken,
-        },
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/admin/users/${params.id}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: authorizationToken,
+          },
+        }
+      );
       const data = await response.json();
       console.log(`single user data: ${data}`);
       setData(data);
@@ -30,12 +34,13 @@ export const AdminUpdate = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getSingleUserData();
   }, []);
 
   const handleInput = (e) => {
-    let name = [e.target.name];
+    let name = e.target.name;
     let value = e.target.value;
     setData({ ...data, [name]: value });
   };
@@ -43,14 +48,18 @@ export const AdminUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/${params.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: authorizationToken,
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `http://localhost:3000/api/admin/users/update/${params.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authorizationToken,
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      // toast.success("Updated Successfully");
 
       if (response.ok) {
         toast.success("User updated successfully");

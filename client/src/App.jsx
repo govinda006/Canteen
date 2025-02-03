@@ -4,7 +4,7 @@ import { AdminLayout } from "./components/layouts/Admin-Layouts";
 import Navbar from "./components/Navbar";
 import { AdminFoods } from "./pages/Admin-Foods";
 import { AdminUpdate } from "./pages/Admin-Update";
-import { AdminUsers } from "./pages/Admin-Users";
+import { AdminUsers } from "./pages/Admin-Users"; // Corrected import statement
 import Adminlogin from "./pages/Adminlogin";
 import Error from "./pages/Error";
 import Home from "./pages/Home";

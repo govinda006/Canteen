@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Import toast
 import "../components/Navbar.css";
 import { useAuth } from "../storage/auth";
-const REGISTER_URL = `${window.location.origin}/api/auth/register`; // Renamed URL constant
+const REGISTER_URL = "http://localhost:3000/api/auth/register"; // Renamed URL constant
 
 export const AdminRegister = () => {
   const [user, setUser] = useState({

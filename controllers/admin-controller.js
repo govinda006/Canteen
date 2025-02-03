@@ -31,6 +31,8 @@ const updateUserById = async (req, res, next) => {
   }
 };
 
+//single user data
+
 const getUserById = async (req, res, next) => {
   try {
     const id = req.params.id;

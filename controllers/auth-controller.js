@@ -22,7 +22,6 @@ const register = async (req, res) => {
       return res.status(400).json({ message: "Email already exists" });
     }
 
-    // Hash The Password
     const userCreated = await User.create({
       username,
       email,

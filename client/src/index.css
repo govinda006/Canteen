@@ -1,3 +1,8 @@
+/* Importing Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Amsterdam&family=Quicksand:wght@300..700&display=swap');
 
@@ -334,6 +339,57 @@ button:hover {
 
 .section-form button:hover {
   background-color: #3498db;
+}
+
+/* Styling for the food items section */
+.food-items-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.food-items-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.food-items-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.food-items-section li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.food-items-section li:hover {
+  background-color: #e0f7fa;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.food-items-section h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #054e5a;
+}
+
+.food-items-section p {
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+}
+
+/* Increase font size for "Today's Menu" heading */
+.food-items-section .text-3xl {
+  font-size: 4rem; /* Increased font size */
 }
 
 /* Styling for the header */
