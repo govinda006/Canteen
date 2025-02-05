@@ -72,6 +72,7 @@ export const AdminFoods = () => {
               <tr>
                 <th>Food Name</th>
                 <th>Description</th>
+                <th>Availability</th> {/* Add Availability column */}
                 <th>Update</th>
                 <th>Delete</th>
               </tr>
@@ -81,6 +82,7 @@ export const AdminFoods = () => {
                 <tr key={food._id}>
                   <td>{food.name}</td>
                   <td>{food.description}</td>
+                  <td>{food.availability ? "Available" : "Not Available"}</td> {/* Display availability */}
                   <td>
                     <Link to={`/admin/foods/update/${food._id}`}>
                       Edit
